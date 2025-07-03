@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SafeRed</title>
+    <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+    <!-- Cabeçalho -->
+    <header>
+        <h1>SafeRed⚽💸</h1>
+        <p>O red virá de qualquer jeito, mas com análise.</p>
+      </header>
+      
+      <!-- Formulário -->
+      <main>
+        <form id="form-analise">
+          <h2>Análise da Partida</h2>
+      
+          <div class="analise-grid">
+            <div class="label"></div>
+            <div>Motivação<br><span class="sub-label">(0-4)</span></div>
+            <div>Momento<br><span class="sub-label">(0-2)</span></div>
+            <div>Elenco<br><span class="sub-label">(0-3)</span></div>
+            <div>Casa/Fora<br><span class="sub-label">(0-2)</span></div>
+            <div>Confronto Direto<br><span class="sub-label">(0-2)</span></div>
+      
+            <div class="label"><input type="text" id="timeA" placeholder="Time A" required></div>
+            <input type="number" id="motivacaoA" min="0" max="4" />
+            <input type="number" id="momentoA" min="0" max="2" />
+            <input type="number" id="elencoA" min="0" max="3" />
+            <input type="number" id="casaForaA" min="0" max="2" />
+            <input type="number" id="confrontoA" min="0" max="2" />
+      
+            <div class="label"><input type="text" id="timeB" placeholder="Time B" required></div>
+            <input type="number" id="motivacaoB" min="0" max="4" />
+            <input type="number" id="momentoB" min="0" max="2" />
+            <input type="number" id="elencoB" min="0" max="3" />
+            <input type="number" id="casaForaB" min="0" max="2" />
+            <input type="number" id="confrontoB" min="0" max="2" />
+          </div>
+      
+          <button type="submit">Analisar</button>
+        </form>
+      
+        <div id="resultado"></div>
+      </main>
+      
+   
+      <script src="script.js"></script>
+</body>
+</html>

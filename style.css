@@ -1,0 +1,127 @@
+/* Cabeçalho */
+header {
+    background-color: #1e1e1e;
+    color: green;
+    padding: 20px;
+    text-align: center;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+  }
+  
+  header h1 {
+    margin: 0;
+    font-size: 2rem;
+    color: #ff4747; /* cor "red" para combinar com o nome */
+  }
+  
+  header p {
+    margin: 8px 0 0;
+    font-size: 1rem;
+    color: #e0e0e0;
+  }
+
+/* ======= FORMULÁRIO PRINCIPAL ======= */
+
+main {
+    background-color: #fff;
+    padding: 20px;
+    margin: 30px auto;
+    max-width: 1000px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+  }
+  
+  /* Título */
+  form h2 {
+    margin-bottom: 30px;
+  }
+  
+  /* ======= GRID DE ANÁLISE ======= */
+  
+  .analise-grid {
+    display: grid;
+    grid-template-columns: 1.2fr repeat(5, 1fr);
+    gap: 10px;
+    align-items: center;
+    margin-bottom: 20px;
+    background: #fafafa;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 0 5px rgba(0,0,0,0.05);
+  }
+  
+  /* Títulos das colunas (Motivação, Momento...) */
+  .analise-grid > div:nth-child(-n+6) {
+    height: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+  }
+  
+  .sub-label {
+  font-size: 0.85em;
+  font-weight: normal;
+  color: #666;
+}
+
+.analise-grid > div:nth-child(-n+6) {
+  text-align: center;
+  line-height: 1.2;
+  flex-direction: column;
+}
+
+
+  /* Inputs */
+  .analise-grid input {
+    height: 36px;
+    padding: 4px;
+    font-size: 0.9em;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    align-self: center;
+    justify-self: center;
+  }
+  
+  /* Input de nome dos times */
+  .analise-grid input[type="text"] {
+    width: 100%;
+    text-align: left;
+    padding-left: 10px;
+  }
+  
+  /* Inputs numéricos (pontuação) */
+  .analise-grid input[type="number"] {
+    width: 60px;
+    text-align: center;
+  }
+  
+  /* ======= BOTÃO ======= */
+  
+  button {
+    background-color: #ff4747;
+    color: white;
+    border: none;
+    padding: 12px;
+    font-size: 1em;
+    border-radius: 6px;
+    cursor: pointer;
+    width: 100%;
+    margin-top: 10px;
+  }
+  
+  button:hover {
+    background-color: #cc3939;
+  }
+  
+  /* ======= RESULTADO ======= */
+  
+  #resultado {
+    margin-top: 20px;
+    font-weight: bold;
+    font-size: 1.1em;
+    padding: 10px;
+    background: #f1f1f1;
+    border-radius: 6px;
+  }
