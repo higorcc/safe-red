@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SafeRed</title>
     <link rel="stylesheet" href="style.css" />
+    <link rel="icon" type="image/png" href="img/logo.png">
+
 </head>
 <body>
     <!-- Cabeçalho -->
@@ -15,6 +17,11 @@
       
       <!-- Formulário -->
       <main>
+         
+        <!-- Botão AutoFill -->
+        <button type="button" id="auto-fill" style="margin-bottom: 10px;">Auto Fill</button>
+
+
         <form id="form-analise">
           <h2>Análise da Partida</h2>
       
@@ -27,27 +34,45 @@
             <div>Confronto Direto<br><span class="sub-label">(0-2)</span></div>
       
             <div class="label"><input type="text" id="timeA" placeholder="Time A" required></div>
-            <input type="number" id="motivacaoA" min="0" max="4" />
-            <input type="number" id="momentoA" min="0" max="2" />
-            <input type="number" id="elencoA" min="0" max="3" />
-            <input type="number" id="casaForaA" min="0" max="2" />
-            <input type="number" id="confrontoA" min="0" max="2" />
+            <input type="number" id="motivacaoA" step="0.25" min="0" max="4" />
+            <input type="number" id="momentoA" step="0.25" min="0" max="2" />
+            <input type="number" id="elencoA" step="0.25" min="0" max="3" />
+            <input type="number" id="casaForaA" step="0.25" min="0" max="2" />
+            <input type="number" id="confrontoA" step="0.25" min="0" max="2" />
       
             <div class="label"><input type="text" id="timeB" placeholder="Time B" required></div>
-            <input type="number" id="motivacaoB" min="0" max="4" />
-            <input type="number" id="momentoB" min="0" max="2" />
-            <input type="number" id="elencoB" min="0" max="3" />
-            <input type="number" id="casaForaB" min="0" max="2" />
-            <input type="number" id="confrontoB" min="0" max="2" />
+            <input type="number" id="motivacaoB" step="0.25" min="0" max="4" />
+            <input type="number" id="momentoB" step="0.25" min="0" max="2" />
+            <input type="number" id="elencoB" step="0.25" min="0" max="3" />
+            <input type="number" id="casaForaB" step="0.25" min="0" max="2" />
+            <input type="number" id="confrontoB" step="0.25" min="0" max="2" />
           </div>
       
           <button type="submit">Analisar</button>
         </form>
       
-        <div id="resultado"></div>
+        <!-- Aqui entra o texto da sugestão de aposta -->
+        <div id="resultado" class="resultado">
+          <div id="linha-resultado">
+            <p id="texto-resultado"></p>
+
+            <div id="botoes-acao" style="display: none;">
+              <button type="button" id="adicionar-aposta">Adicionar ao carrinho</button>
+              <button type="button" id="descartar-aposta">Descartar</button>
+            </div>
+          </div>
+        </div>
+
+      <!-- Carrinho de apostas -->  
+      <div id="carrinho-apostas" style="display: none;">
+        <h3>Apostas adicionadas:</h3>
+        <table border="1" cellspacing="0" cellpadding="5">
+          <thead id="lista-apostas"></thead>
+        </table>
+      </div>
+
       </main>
-      
-   
+
       <script src="script.js"></script>
 </body>
 </html>

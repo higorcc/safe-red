@@ -97,7 +97,7 @@ main {
     text-align: center;
   }
   
-  /* ======= BOTÃO ======= */
+  /* ======= BOTÃO DE ANALISE ======= */
   
   button {
     background-color: #ff4747;
@@ -116,7 +116,7 @@ main {
   }
   
   /* ======= RESULTADO ======= */
-  
+
   #resultado {
     margin-top: 20px;
     font-weight: bold;
@@ -125,3 +125,93 @@ main {
     background: #f1f1f1;
     border-radius: 6px;
   }
+
+  #linha-resultado {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    flex-wrap: wrap; /* Evita quebra feia em telas pequenas */
+  }
+
+  #texto-resultado {
+    color: black;
+    margin: 0;
+    font-size: 1rem;
+  }
+  
+  /* ======= BOTOES ADICIONAR APOSTA E DESCARTAR ======= */
+  #botoes-acao {
+  display: flex;
+  gap: 8px;
+}
+
+  #botoes-acao button {
+    padding: 4px 8px;
+    font-size: 0.85rem;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+
+  #adicionar-aposta {
+    background-color: #28a745;
+    color: white;
+  }
+
+  #descartar-aposta {
+    background-color: #dc3545;
+    color: white;
+  }
+  
+/* ======= CARRINHO DE APOSTAS ======= */
+
+#carrinho-apostas {
+  margin-top: 30px;
+  background-color: #ffffff;
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+#carrinho-apostas h3 {
+  margin-bottom: 15px;
+}
+
+/* Tabela do carrinho */
+#lista-apostas {
+  width: 100%;
+  border-collapse: collapse;
+  border: none;
+  font-size: 0.95rem;
+}
+
+/* Cabeçalho */
+#lista-apostas th {
+  background-color: #f8f8f8;
+  font-weight: bold;
+  padding: 10px 12px;
+  border: none;
+  border-bottom: 1px solid #ddd;
+  text-align: center;
+}
+
+/* Células */
+#lista-apostas td {
+  padding: 10px 12px;
+  text-align: center;
+  border: none;
+  border-bottom: 1px solid #ddd;
+}
+
+/* Ícone de remover aposta (posição e estilo básico) */
+.remover-aposta {
+  color: #dc3545;
+  cursor: pointer;
+  font-size: 1.1em;
+  font-weight: bold;
+}
+.remover-aposta:hover {
+  color: #a71d2a;
+}
+
