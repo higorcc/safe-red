@@ -1,0 +1,460 @@
+/* Cabeçalho */
+.topo {
+  background-color: #1f1f1f;
+  padding: 20px 40px;
+  border-radius: 8px;
+  margin-bottom: 20px;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+}
+
+.topo-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.logo-central {
+  text-align: center;
+  flex: 1;
+}
+
+.titulo {
+  color: #ff4747;
+  font-size: 2rem;
+  margin: 0;
+}
+
+.slogan {
+  color: #dcdcdc;
+  margin: 5px 0 0;
+}
+
+.menu-navegacao {
+  text-align: right;
+}
+
+.menu-navegacao a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: bold;
+  padding: 8px 16px;
+  border-radius: 6px;
+  transition: background-color 0.3s;
+}
+
+.menu-navegacao a:hover {
+  background-color: #ff4747;
+  color: #fff;
+}
+
+
+
+/* ======= FORMULÁRIO PRINCIPAL ======= */
+
+main {
+    background-color: #fff;
+    padding: 20px;
+    margin: 30px auto;
+    max-width: 1000px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+  }
+  
+  /* Título */
+  form h2 {
+    margin-bottom: 30px;
+  }
+  
+  /* ======= GRID DE ANÁLISE ======= */
+  
+  .analise-grid {
+    display: grid;
+    grid-template-columns: 1.2fr repeat(5, 1fr);
+    gap: 10px;
+    align-items: center;
+    margin-bottom: 20px;
+    background: #fafafa;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 0 5px rgba(0,0,0,0.05);
+  }
+  
+  /* Títulos das colunas (Motivação, Momento...) */
+  .analise-grid > div:nth-child(-n+6) {
+    height: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+  }
+  
+  .sub-label {
+  font-size: 0.85em;
+  font-weight: normal;
+  color: #666;
+}
+
+.analise-grid > div:nth-child(-n+6) {
+  text-align: center;
+  line-height: 1.2;
+  flex-direction: column;
+}
+
+
+  /* Inputs */
+  .analise-grid input {
+    height: 36px;
+    padding: 4px;
+    font-size: 0.9em;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    align-self: center;
+    justify-self: center;
+  }
+  
+  /* Input de nome dos times */
+  .analise-grid input[type="text"] {
+    width: 100%;
+    text-align: left;
+    padding-left: 10px;
+  }
+  
+  /* Inputs numéricos (pontuação) */
+  .analise-grid input[type="number"] {
+    width: 60px;
+    text-align: center;
+  }
+  
+  /* ======= BOTÃO DE ANALISE ======= */
+  
+  button {
+    background-color: #ff4747;
+    color: white;
+    border: none;
+    padding: 12px;
+    font-size: 1em;
+    border-radius: 6px;
+    cursor: pointer;
+    width: 100%;
+    margin-top: 10px;
+  }
+  
+  button:hover {
+    background-color: #cc3939;
+  }
+  
+  /* ======= RESULTADO ======= */
+
+  #resultado {
+    margin-top: 20px;
+    font-weight: bold;
+    font-size: 1.1em;
+    padding: 10px;
+    background: #f1f1f1;
+    border-radius: 6px;
+  }
+
+  #linha-resultado {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    flex-wrap: wrap; /* Evita quebra feia em telas pequenas */
+  }
+
+  #texto-resultado {
+    color: black;
+    margin: 0;
+    font-size: 1rem;
+  }
+  
+  /* ======= BOTOES ADICIONAR APOSTA E DESCARTAR ======= */
+  #botoes-acao {
+  display: flex;
+  gap: 8px;
+}
+
+  #botoes-acao button {
+    padding: 4px 8px;
+    font-size: 0.85rem;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+
+  #adicionar-aposta {
+    background-color: #28a745;
+    color: white;
+  }
+
+  #descartar-aposta {
+    background-color: #dc3545;
+    color: white;
+  }
+  
+/* ======= CARRINHO DE APOSTAS ======= */
+
+#carrinho-apostas {
+  margin-top: 30px;
+  background-color: #ffffff;
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+#carrinho-apostas h3 {
+  margin-bottom: 15px;
+}
+
+/* Tabela do carrinho */
+#lista-apostas {
+  width: 100%;
+  border-collapse: collapse;
+  border: none;
+  font-size: 0.95rem;
+}
+
+/* Cabeçalho */
+#lista-apostas th {
+  background-color: #f8f8f8;
+  font-weight: bold;
+  padding: 10px 12px;
+  border: none;
+  border-bottom: 1px solid #ddd;
+  text-align: center;
+}
+
+/* Células */
+#lista-apostas td {
+  padding: 10px 12px;
+  text-align: center;
+  border: none;
+  border-bottom: 1px solid #ddd;
+}
+
+/* Ícone de remover aposta (posição e estilo básico) */
+.remover-aposta {
+  color: #dc3545;
+  cursor: pointer;
+  font-size: 1.1em;
+  font-weight: bold;
+}
+.remover-aposta:hover {
+  color: #a71d2a;
+}
+
+/* ======= BOTÃO FINALIZAR APOSTA ======= */
+.carrinho-conteudo {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-top: 10px;
+  gap: 20px;
+}
+
+#finalizar-aposta {
+  align-self: flex-end;
+  margin-right: 8px;
+  padding: 10px 16px;
+  font-size: 1rem;
+  background-color: #ff4747;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+#finalizar-aposta:hover {
+  background-color: #cc3939;
+}
+
+/* ======= MODAL DE FINALIZAÇÃO ======= */
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.modal-conteudo {
+  background: white;
+  padding: 20px 30px;
+  border-radius: 8px;
+  max-width: 500px;
+  width: 100%;
+  position: relative;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+}
+
+.modal-conteudo h2 {
+  margin-top: 0;
+  color: #ff4747;
+}
+
+.modal-conteudo label {
+  display: block;
+  margin-top: 10px;
+  font-weight: bold;
+}
+
+.modal-conteudo input {
+  width: 100%;
+  padding: 8px;
+  margin-top: 4px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.modal-conteudo ul {
+  list-style: none;
+  padding: 0;
+  margin-top: 10px;
+  font-size: 0.95em;
+}
+
+.modal-conteudo button {
+  margin-top: 20px;
+  width: 100%;
+  background-color: #28a745;
+}
+
+.fechar-modal {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  font-size: 24px;
+  color: #888;
+  cursor: pointer;
+}
+
+/* TABELA DO MODAL */
+/* ======= TABELA DE ANÁLISES NO MODAL ======= */
+.tabela-analises {
+  border-collapse: collapse;
+  width: 100%;
+  font-size: 14px;
+  margin-top: 10px;
+}
+
+.tabela-analises th,
+.tabela-analises td {
+  border: 1px solid #ddd;
+  padding: 6px 10px;
+  text-align: left;
+}
+
+.tabela-analises th {
+  background-color: #f5f5f5;
+  font-weight: bold;
+}
+
+/* ====== PAGINA MINHAS APOSTAS =====*/
+#lista-apostas-salvas table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+#lista-apostas-salvas th,
+#lista-apostas-salvas td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: center;
+}
+
+#lista-apostas-salvas th {
+  background-color: #f2f2f2;
+  font-weight: bold;
+}
+
+/* ====== BOTÃO DA LUPA DENTRO DA COLUNA AÇÕES =====*/
+.detalhes-btn {
+  background: none !important;   /* força sem fundo */
+  border: none !important;       /* força sem borda */
+  padding: 4px;
+  cursor: pointer;
+  font-size: 18px;
+}
+
+.detalhes-btn:hover,
+.detalhes-btn:focus {
+  background: none !important;   /* garante sem fundo no hover e focus */
+  outline: none;                 /* tira contorno azul de foco */
+}
+
+.detalhes-btn:hover {
+  transform: scale(1.2);  /* animaçãozinha opcional */
+}
+
+/* ====== Modal Detalhes ====== */
+#modal-detalhes {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.5);
+  display: none;          /* controlado via JS */
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+#modal-detalhes .modal-conteudo {
+  background: #fff;
+  border-radius: 8px;
+  padding: 20px 24px;
+  width: 520px;
+  max-width: 92vw;
+  box-shadow: 0 10px 30px rgba(0,0,0,.2);
+  position: relative;
+}
+
+#modal-detalhes .fechar-modal {
+  position: absolute;
+  right: 12px;
+  top: 10px;
+  font-size: 22px;
+  color: #888;
+  cursor: pointer;
+}
+
+#checkbox-analises {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px 16px;
+}
+
+#checkbox-analises label {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin: 6px 0;
+}
+
+/* Lupa sem fundo/borda */
+.detalhes-btn {
+  background: none !important;
+  border: none !important;
+  padding: 4px;
+  cursor: pointer;
+  font-size: 18px;
+}
+.detalhes-btn:hover,
+.detalhes-btn:focus { background: none !important; outline: none; }
+
+/* Botão salvar do modal */
+#salvar-detalhes {
+  background: #28a745;
+  color: #fff;
+  border: 0;
+  padding: 10px 16px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+#salvar-detalhes:hover { background: #218838; }
+

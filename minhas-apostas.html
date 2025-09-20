@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Minhas Apostas | SafeRed</title>
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+
+  <!-- Cabeçalho -->
+  <header class="topo">
+    <div class="topo-container">
+      <div class="logo-central">
+        <h1 class="titulo">SafeRed <span class="emoji">⚽💸</span></h1>
+        <p class="slogan">O red virá de qualquer jeito, mas com análise.</p>
+      </div>
+      <nav class="menu-navegacao">
+        <a href="index.html">Página Inicial</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <h2>Minhas Apostas</h2>
+    <div id="lista-apostas-salvas">
+      <!-- As apostas do localStorage serão carregadas aqui via JS -->
+    </div>
+  </main>
+<!-- Modal Detalhes da Aposta -->
+<div id="modal-detalhes" class="modal" style="display:none;">
+  <div class="modal-conteudo">
+    <span class="fechar-modal">&times;</span>
+    <h2>Detalhes da Aposta</h2>
+
+    <div id="analises-resumo" style="margin-bottom:10px;"></div>
+
+    <label for="resultado-select">Resultado:</label>
+    <select id="resultado-select" style="width:100%;margin:6px 0 10px;">
+      <option value="">Selecione...</option>
+      <option value="green">Green ✅</option>
+      <option value="red">Red ❌</option>
+      <option value="cashout">Cashout 🟨</option>
+    </select>
+
+    <!-- aparece só se escolher red -->
+    <div id="red-detalhes" style="display:none; margin-top:10px;">
+      <p>Marque quais análises falharam:</p>
+      <div id="checkbox-analises"></div>
+    </div>
+
+    <!-- aparece só se escolher cashout -->
+    <div id="cashout-campo" style="display:none; margin-top:8px;">
+      <label for="cashout-valor">Valor obtido no cashout (R$):</label>
+      <input type="number" id="cashout-valor" step="0.01" min="0" placeholder="Ex: 75.50" style="width:100%;">
+    </div>
+
+    <div style="margin-top:16px;text-align:right;">
+      <button id="salvar-detalhes">Salvar</button>
+    </div>
+  </div>
+</div>
+
+
+  <script src="js/minhas-apostas.js"></script>
+</body>
+</html>

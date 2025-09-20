@@ -83,6 +83,8 @@ document.getElementById("adicionar-aposta").addEventListener("click", function (
     sugestao: sugestaoTipoGlobal,
     timeAfavor: diferencaGlobal > 0 ? timeA : timeB,
     timeContra: diferencaGlobal > 0 ? timeB : timeA,
+    timeCasa: timeA,
+    timeFora: timeB,
     diferenca: Math.abs(diferencaGlobal),
   };
 
@@ -148,6 +150,126 @@ document.getElementById("descartar-aposta").addEventListener("click", function (
   document.getElementById("texto-resultado").textContent = "";
   document.getElementById("botoes-acao").style.display = "none";
 });
+
+// ====== FINALIZAR APOSTA - BOTÃO E MODAL ======
+
+const botaoFinalizar = document.getElementById("finalizar-aposta");
+const modal = document.getElementById("modal-finalizar");
+const fecharModal = document.querySelector(".fechar-modal");
+const inputOdd = document.getElementById("odd-total");
+const inputValor = document.getElementById("valor-apostado");
+const inputRetorno = document.getElementById("retorno-esperado");
+const listaResumo = document.getElementById("resumo-apostas");
+const corpoTabelaResumo = document.querySelector("#resumo-apostas tbody");
+
+botaoFinalizar.addEventListener("click", function () {
+  if (apostasAdicionadas.length === 0) {
+    alert("Adicione pelo menos uma aposta ao carrinho.");
+    return;
+  }
+
+  // Abre o modal
+  modal.style.display = "flex";
+
+   // Limpa a tabela antes de adicionar novamente
+    corpoTabelaResumo.innerHTML = "";
+
+  // Preenche a lista de apostas no modal
+  apostasAdicionadas.forEach((aposta, index) => {
+  const linha = document.createElement("tr");
+  linha.innerHTML = `
+    <td>${index + 1}</td>
+    <td>${aposta.vantagem}</td>
+    <td>${aposta.sugestao}</td>
+    <td>${aposta.timeAfavor}</td>
+    <td>${aposta.timeContra}</td>
+  `;
+  corpoTabelaResumo.appendChild(linha);
+});
+
+  // Limpa campos
+  inputOdd.value = "";
+  inputValor.value = "";
+  inputRetorno.value = "";
+});
+
+fecharModal.addEventListener("click", function () {
+  modal.style.display = "none";
+});
+
+inputOdd.addEventListener("input", calcularRetorno);
+inputValor.addEventListener("input", calcularRetorno);
+
+function calcularRetorno() {
+  const odd = parseFloat(inputOdd.value);
+  const valor = parseFloat(inputValor.value);
+
+  if (!isNaN(odd) && !isNaN(valor)) {
+    const retorno = odd * valor;
+    inputRetorno.value = `R$ ${retorno.toFixed(2)}`;
+  } else {
+    inputRetorno.value = "";
+  }
+}
+
+// Clique fora do modal fecha também
+window.addEventListener("click", function (e) {
+  if (e.target === modal) {
+    modal.style.display = "none";
+  }
+});
+
+// ====== FINALIZAR APOSTA - BOTÃO ======
+document.getElementById("confirmar-finalizacao").addEventListener("click", function () {
+  const casa = document.getElementById("casa-aposta").value.trim();
+  const odd = parseFloat(document.getElementById("odd-total").value);
+  const valor = parseFloat(document.getElementById("valor-apostado").value);
+  const retorno = odd * valor;
+
+  if (!casa || isNaN(odd) || isNaN(valor)) {
+    alert("Preencha todos os campos corretamente.");
+    return;
+  }
+
+  const novaAposta = {
+    casa,
+    odd: odd.toFixed(2),
+    valor: valor.toFixed(2),
+    retorno: retorno.toFixed(2),
+    analises: [...apostasAdicionadas],
+    dataHora: new Date().toISOString()
+  };
+
+  // Recupera histórico do localStorage
+  const historico = JSON.parse(localStorage.getItem("apostasSalvas")) || [];
+
+  // Adiciona a nova aposta
+  historico.push(novaAposta);
+
+  // Salva novamente
+  localStorage.setItem("apostasSalvas", JSON.stringify(historico));
+
+  // Reset interface
+  apostasAdicionadas = [];
+  atualizarCarrinho();
+  document.getElementById("form-analise").reset();
+  document.getElementById("texto-resultado").textContent = "";
+  document.getElementById("botoes-acao").style.display = "none";
+  document.getElementById("casa-aposta").value = "";
+  document.getElementById("odd-total").value = "";
+  document.getElementById("valor-apostado").value = "";
+  document.getElementById("retorno-esperado").value = "";
+
+  // Fecha modal
+  modal.style.display = "none";
+
+  alert("Aposta confirmada e salva com sucesso!");
+});
+
+
+
+
+
 
 // ====== BOTÃO AUTO-FILL PARA TESTES ======
 document.getElementById("auto-fill").addEventListener("click", function () {

@@ -3,17 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SafeRed</title>
-    <link rel="stylesheet" href="style.css" />
+    <title>Home | SafeRed</title>
+    <link rel="stylesheet" href="/css/style.css" />
     <link rel="icon" type="image/png" href="img/logo.png">
 
 </head>
 <body>
     <!-- Cabeçalho -->
-    <header>
-        <h1>SafeRed⚽💸</h1>
-        <p>O red virá de qualquer jeito, mas com análise.</p>
-      </header>
+    <header class="topo">
+      <div class="topo-container">
+      <div class="logo-central">
+      <h1 class="titulo">SafeRed <span class="emoji">⚽💸</span></h1>
+      <p class="slogan">O red virá de qualquer jeito, mas com análise.</p>
+      </div>
+      <nav class="menu-navegacao">
+        <a href="minhas-apostas.html">Minhas Apostas</a>
+      </nav>
+      </div>
+    </header>
       
       <!-- Formulário -->
       <main>
@@ -66,13 +73,56 @@
       <!-- Carrinho de apostas -->  
       <div id="carrinho-apostas" style="display: none;">
         <h3>Apostas adicionadas:</h3>
-        <table border="1" cellspacing="0" cellpadding="5">
-          <thead id="lista-apostas"></thead>
-        </table>
+        <div class="carrinho-conteudo">
+          <table border="1" cellspacing="0" cellpadding="5">
+            <thead id="lista-apostas"></thead>
+          </table>
+        <div class="finalizar-container">
+          <button id="finalizar-aposta">Finalizar aposta</button>
+        </div>
+        </div>
       </div>
+
+<!-- Modal de Finalização -->
+<div id="modal-finalizar" class="modal" style="display: none;">
+  <div class="modal-conteudo">
+    <span class="fechar-modal">&times;</span>
+    <h2>Finalizar Aposta</h2>
+
+    <!-- Campos do formulário -->
+    <label>Casa de Aposta:</label>
+    <input type="text" id="casa-aposta" placeholder="Ex: Betano"><br>
+
+    <label>Odd Total:</label>
+    <input type="number" id="odd-total" step="0.01" placeholder="Ex: 3.25"><br>
+
+    <label>Valor Apostado (R$):</label>
+    <input type="number" id="valor-apostado" step="0.01" placeholder="Ex: 50"><br>
+
+    <label>Retorno Esperado:</label>
+    <input type="text" id="retorno-esperado" disabled><br>
+
+    <h3>Análises incluídas:</h3>
+      <table id="resumo-apostas" class="tabela-analises" style="width: 100%; margin-top: 10px;">
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>Vantagem</th>
+            <th>Sugestão</th>
+            <th>Time A Favor</th>
+            <th>Time Contra</th>
+          </tr>
+        </thead>
+        <tbody id="corpo-tabela-analises"></tbody>
+      </table>
+
+    <button id="confirmar-finalizacao">Confirmar</button>
+  </div>
+</div>
+      
 
       </main>
 
-      <script src="script.js"></script>
+      <script src="js/main.js"></script>
 </body>
 </html>
